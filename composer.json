@@ -1,0 +1,17 @@
+{
+    "name": "clement/pomo-task",
+    "autoload": {
+        "psr-4": {
+            "Clement\\PomoTask\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GuillemotClement",
+            "email": "guillemot.clement@protonmail.com"
+        }
+    ],
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    }
+}
