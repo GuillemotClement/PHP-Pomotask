@@ -1,0 +1,8 @@
+@import "reset.css";
+@import "variables.css";
+
+/*PARTIALS*/
+@import "partials/header.css";
+
+/*COMPONENTS*/
+@import "components/button.css";

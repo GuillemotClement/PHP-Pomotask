@@ -1,4 +1,7 @@
 <?php
+
+use http\Header;
+
 function p(mixed $value): void
 {
   echo '<pre>';
@@ -33,11 +36,22 @@ function abort(int $code = 404){
  * @return void
  */
 function dispatchRoute(string $uri, string $method, array $routes){
-  foreach ($routes as $path => $route){
-    if($path === $uri && $route['method'] === $method){
-      requireController($route['controller']);
+  if(!isset($routes[$uri])){
+    abort();
+  }
+
+  foreach ($routes[$uri] as $route){
+    if($route['method'] === $method){
+      return requireController($route['controller']);
       exit();
     }
   }
+
   abort();
+}
+
+function logout(){
+  session_destroy();
+  header("Location: /");
+  exit();
 }

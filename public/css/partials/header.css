@@ -1,0 +1,41 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  align-items: center;
+  padding: 1.5rem 3rem;
+}
+.header-logo{
+  display: flex;
+  align-items: center;
+}
+
+.header-logo__logo{
+  font-size: 2.5rem;
+  margin-right: 0.8rem;
+}
+
+.header-logo__title{
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header-menu-nav, .header-menu-action{
+  display: flex;
+  column-gap: 0.8rem;
+}
+
+/*si l'ecran fait moins de 500 px on cache le button*/
+@media (max-width: 500px){
+  .header-action{
+    display: block;
+  }
+}
+
+/*si l'ecran fait plus de 500px on affiche le button*/
+@media (min-width: 500px) {
+  .header-action{
+    display: none;
+  }
+}

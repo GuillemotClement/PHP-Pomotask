@@ -1,0 +1,13 @@
+:root{
+  --primary-1 : #3498db;
+  --primary-2: #2980b9;
+  --success-1: #2ecc71;
+  --success-2: #27ae60;
+  --warning-1: #f1c40f;
+  --warning-2: #f39c12;
+  --danger-1: #e74c3c;
+  --danger-2: #c0392b;
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-2: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --rounded: 0.5rem;
+}

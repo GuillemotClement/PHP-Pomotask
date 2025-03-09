@@ -1,0 +1,10 @@
+.btn{
+  border-radius: var(--rounded);
+  border: 1px solid black;
+  box-shadow: var(--shadow);
+  padding: 0.5rem 0.8rem;
+}
+
+.btn:hover{
+  box-shadow: var(--shadow-2);
+}
