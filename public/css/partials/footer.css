@@ -1,0 +1,12 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-top: 1px solid black;
+}
+
+.menu-social{
+  display: flex;
+  column-gap: 0.8rem;
+}

@@ -55,3 +55,13 @@ function logout(){
   header("Location: /");
   exit();
 }
+
+function renderPartial(string $partial){
+  $file = __DIR__ ."/../Views/layout/partials/{$partial}.php";
+  if(file_exists($file)){
+    require_once $file;
+  }
+  else {
+    return "Partial $partial not found";
+  }
+}
