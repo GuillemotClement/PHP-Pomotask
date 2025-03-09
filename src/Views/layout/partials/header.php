@@ -1,3 +1,6 @@
+<?php
+$user_id = $_SESSION['user_id'] ?? 0;
+?>
 <header class="header">
   <a class="header-logo" href="/">
     <i class="fa-solid fa-list-check header-logo__logo"></i>
@@ -9,7 +12,7 @@
     <li><a href="/">Taches</a></li>
   </ul>
   <ul class="header-menu-action">
-    <?php if($_SESSION['user_id'] > 0): ?>
+    <?php if($user_id > 0): ?>
       <li><a href="/" class="btn">Profil</a></li>
       <li><a href="/logout" class="btn">Deconnexion</a></li>
     <?php else: ?>
