@@ -37,12 +37,10 @@ class Router
 
 
     foreach ($routes as $route){
-      if($route['method'] !== $method)
+      if($route['method'] === $method)
       {
-        throw new Exception("Method not allowed for route '$uri'. Expected: {$route['method']}, got: $method");
+        return $this->requireController($route['controller'], $route['action'] ?? 'index');
       }
-
-      return $this->requireController($route['controller'], $route['action'] ?? 'index');
     }
     abort();
   }

@@ -14,7 +14,13 @@ class Model
   protected function query(string $sql, array $vars){
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($vars);
-    return $stmt;
+
+    // si insertion on retourne le dernier id inserer
+    if(stripos($sql, 'INSERT') === 0){
+      return $this->pdo->lastInsertId();
+    }
+
+    return $stmt->fetchObject();
   }
 
   public function fetchAll(string $table){
