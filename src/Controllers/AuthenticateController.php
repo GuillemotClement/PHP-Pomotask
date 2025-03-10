@@ -6,9 +6,19 @@ use Clement\PomoTask\Core\Controller;
 
 class AuthenticateController extends Controller
 {
-  public function login(){}
+  public function login(){
 
-  public function register(){}
+    renderView('login');
+  }
+
+  public function register(){
+    $data = [
+      'page' => 'Inscription'
+    ];
+
+
+    renderView('register', $data);
+  }
 
   public function logout():void
   {

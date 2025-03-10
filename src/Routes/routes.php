@@ -1,43 +1,10 @@
 <?php
+// Pour eviter l'erreur de ide
+/** @var \Clement\PomoTask\Core\Router $router */
 
-return [
-  '/' => [
-    'controller' => 'Home',
-    'method'=> 'GET',
-    'action' => 'index',
-  ],
-  '/logout' => [
-    'controller' => 'Authenticate',
-    'method' => 'GET',
-    'action' => 'logout'
-  ]
-];
+$router->getRoute('/', 'Home', 'index');
+$router->getRoute('/register', 'Authenticate', 'register');
+$router->postRoute('/register', 'Authenticate', 'register');
 
 
 
-
-//$routes = [
-//  '/' => [
-//    [
-//      'controller' => 'home',
-//      'method' => 'GET'
-//    ],
-//  ],
-//  '/login' => [
-//    [
-//      'controller' => 'login',
-//      'method' => 'GET'
-//    ],
-//    [
-//      'controller' => 'login',
-//      'method'=>'POST'
-//    ],
-//  ],
-//  '/logout' => [
-//    [
-//      'controller' => 'authenticate',
-//      'method' => 'GET',
-//      'action' => 'logout'
-//    ]
-//  ]
-//];

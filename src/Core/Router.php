@@ -10,7 +10,7 @@ class Router
 
   public function __construct()
   {
-    $this->routes = require_once __DIR__.'/../Routes/routes.php';
+    $this->routes = [];
   }
 
   private function requireController(string $controllerName, string $methodName = 'index'){
@@ -33,17 +33,51 @@ class Router
     if(!isset($this->routes[$uri])){
       abort();
     }
+    $routes = $this->routes[$uri];
 
-    $route = $this->routes[$uri];
 
-    if($route['method'] !== $method)
-    {
-      throw new Exception("Method not allowed for route '$uri'. Expected: {$route['method']}, got: $method");
+    foreach ($routes as $route){
+      if($route['method'] !== $method)
+      {
+        throw new Exception("Method not allowed for route '$uri'. Expected: {$route['method']}, got: $method");
+      }
+
+      return $this->requireController($route['controller'], $route['action'] ?? 'index');
     }
-
-    return $this->requireController($route['controller'], $route['action'] ?? 'index');
-
     abort();
   }
 
+  public function addRoute(string $path, string $controller, string $method, string $action)
+  {
+    $this->routes[$path][] = [
+      'controller' => $controller,
+      'method' => $method,
+      'action' => $action
+    ];
+  }
+
+  public function getRoute(string $path, string $controller, string $action)
+  {
+    $this->addRoute($path, $controller, 'GET', $action);
+  }
+
+  public function postRoute(string $path, string $controller, string $action)
+  {
+    $this->addRoute($path, $controller, 'POST', $action);
+  }
+
+  public function deleteRoute(string $path, string $controller, string $action)
+  {
+    $this->addRoute($path, $controller, 'DELETE', $action);
+  }
+
+  public function patchRoute(string $path, string $controller, string $action)
+  {
+    $this->addRoute($path, $controller, 'PATCH', $action);
+  }
+
+  public function putRoute(string $path, string $controller, string $action)
+  {
+    $this->addRoute($path, $controller, 'PUT', $action);
+  }
 }

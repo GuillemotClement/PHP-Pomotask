@@ -17,7 +17,7 @@ $user_id = $_SESSION['user_id'] ?? 0;
       <li><a href="/logout" class="btn">Deconnexion</a></li>
     <?php else: ?>
       <li><a href="/login" class="btn">Connexion</a></li>
-      <li><a href="/" class="btn">Inscription</a></li>
+      <li><a href="/register" class="btn">Inscription</a></li>
     <?php endif; ?>
   </ul>
   <div class="header-action" id="menu_mobile">

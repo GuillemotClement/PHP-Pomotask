@@ -17,4 +17,9 @@ class Model
     return $stmt;
   }
 
+  public function fetchAll(string $table){
+    $sql = "SELECT * FROM $table";
+    return $this->query($sql);
+  }
+
 }
