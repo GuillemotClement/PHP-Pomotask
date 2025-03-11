@@ -6,5 +6,6 @@ $router->getRoute('/', 'Home', 'index');
 $router->getRoute('/register', 'Authenticate', 'register');
 $router->postRoute('/register', 'Authenticate', 'register');
 
-
+$router->getRoute('/login', 'Authenticate', 'login');
+$router->postRoute('/login', 'Authenticate', 'login');
 

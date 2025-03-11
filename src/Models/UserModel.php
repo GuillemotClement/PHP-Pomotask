@@ -16,7 +16,6 @@ class UserModel extends Model
   public function getUserByUsername($username){
     $sql = "SELECT * FROM Users WHERE username = :username";
     $vars = [':username' => $username];
-    $row = $this->query($sql, $vars);
-    return $row->fetchObject();
-}
+    return $this->query($sql, $vars);
+  }
 }
