@@ -9,3 +9,8 @@
 /*COMPONENTS*/
 @import "components/button.css";
 @import "components/form.css";
+
+/*PAGES*/
+@import "pages/homePage.css";
+@import "pages/taskPage.css";
+@import "pages/projectPage.css";

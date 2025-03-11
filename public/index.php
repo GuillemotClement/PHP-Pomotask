@@ -6,7 +6,6 @@ require_once __DIR__."/../vendor/autoload.php";
 require_once __DIR__."/../src/Core/helpers.php";
 
 session_start();
-p($_SESSION);
 $router = new Router();
 
 require_once __DIR__.'/../src/Routes/routes.php'; //rend disponible la variable d'instance de la classe Router

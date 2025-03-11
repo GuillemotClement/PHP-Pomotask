@@ -6,4 +6,7 @@ body{
 
 .mainContent{
   flex: 1;
+  width: 1000px;
+  margin: 25px auto;
+  border: black 1px solid;
 }
