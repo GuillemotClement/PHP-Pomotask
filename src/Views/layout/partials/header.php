@@ -8,7 +8,7 @@ $user_id = $_SESSION['user_id'] ?? 0;
   </a>
   <ul class="header-menu-nav">
     <li><a href="/">Accueil</a></li>
-    <li><a href="/">Projets</a></li>
+    <li><a href="/projects">Projets</a></li>
     <li><a href="/">Taches</a></li>
   </ul>
   <ul class="header-menu-action">

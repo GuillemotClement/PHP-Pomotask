@@ -9,3 +9,6 @@ $router->postRoute('/register', 'Authenticate', 'register');
 $router->getRoute('/login', 'Authenticate', 'login');
 $router->postRoute('/login', 'Authenticate', 'login');
 
+$router->getRoute('/projects', 'Project', 'listProject');
+$router->getRoute('/projects/create', 'Project', 'createProject');
+$router->postRoute('/projects/create', 'Project', 'createProject');
