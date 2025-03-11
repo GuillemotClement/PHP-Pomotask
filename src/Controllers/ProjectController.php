@@ -18,7 +18,10 @@ class ProjectController extends Controller
     $data = [
       'page' => 'Mes projets'
     ];
+    $userId = $_SESSION['user_id'];
+    $listProject = $this->projectModel->listProject($userId);
 
+    $data['data'] = [$listProject];
     renderView('/project/listProject', $data);
   }
   public function createProject(){

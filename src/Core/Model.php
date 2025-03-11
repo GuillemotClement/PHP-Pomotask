@@ -4,14 +4,14 @@ namespace Clement\PomoTask\Core;
 use PDO;
 class Model
 {
-  private PDO $pdo;
+  protected PDO $pdo;
 
   public function __construct()
   {
     $this->pdo = Database::getConnection();
   }
 
-  protected function query(string $sql, array $vars){
+  protected function query(string $sql, array $vars=[]){
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($vars);
 
@@ -25,6 +25,7 @@ class Model
 
   public function fetchAll(string $table){
     $sql = "SELECT * FROM $table";
+
     return $this->query($sql);
   }
 
